@@ -57,6 +57,18 @@
     scroll-behavior: smooth;
 }
 
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
 body {
     font-family: var(--font-body);
     color: var(--slate-800);
@@ -606,7 +618,11 @@ header.sticky {
 
 .services-grid {
     display: grid;
+<<<<<<< HEAD
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+=======
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+>>>>>>> 113aa5a (update website design)
     gap: 40px;
 }
 
@@ -1631,6 +1647,29 @@ header.sticky {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 40px;
     }
+<<<<<<< HEAD
+=======
+
+    .top-bar {
+        padding: 8px 0;
+    }
+
+    .top-bar-content {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+
+    .top-info {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .top-social {
+        justify-content: center;
+    }
+>>>>>>> 113aa5a (update website design)
 }
 
 @media (max-width: 768px) {
@@ -1660,6 +1699,40 @@ header.sticky {
     .nav-btn {
         display: none;
     }
+<<<<<<< HEAD
+=======
+
+    .cta-group {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .cta-group .btn {
+        width: 100%;
+    }
+
+    .hero-stats {
+        flex-wrap: wrap;
+        gap: 24px;
+        justify-content: center;
+    }
+
+    .contact-form {
+        padding: 30px 20px;
+    }
+
+    .doctor-experience {
+        right: 0;
+    }
+
+    .floating-card {
+        display: none;
+    }
+
+    .slider-wrapper {
+        padding: 0;
+    }
+>>>>>>> 113aa5a (update website design)
 }
 
 @media (max-width: 576px) {
@@ -1678,6 +1751,36 @@ header.sticky {
     .testimonial-slide {
         padding: 40px 20px;
     }
+<<<<<<< HEAD
+=======
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card {
+        padding: 36px 20px;
+    }
+
+    .top-info span {
+        font-size: 0.8rem;
+    }
+
+    .top-info span:last-child {
+        display: none;
+    }
+
+    .gallery-controls,
+    .slider-controls {
+        gap: 14px;
+    }
+
+    .gallery-btn,
+    .slider-btn {
+        width: 42px;
+        height: 42px;
+    }
+>>>>>>> 113aa5a (update website design)
 }
 
 /* Floating Buttons */
