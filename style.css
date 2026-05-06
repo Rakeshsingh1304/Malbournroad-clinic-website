@@ -69,6 +69,7 @@ body {
     overflow-x: hidden;
     position: relative;
 }
+
 body {
     font-family: var(--font-body);
     color: var(--slate-800);
@@ -389,7 +390,8 @@ header {
 /* --- HERO SECTION --- */
 .hero {
     min-height: 90vh;
-    padding: 180px 0 80px; /* Increased top padding for fixed header */
+    padding: 180px 0 80px;
+    /* Increased top padding for fixed header */
     display: flex;
     align-items: center;
     background: radial-gradient(circle at 10% 20%, rgba(14, 165, 233, 0.05) 0%, rgba(255, 255, 255, 1) 90%);
@@ -628,11 +630,7 @@ header {
 
 .services-grid {
     display: grid;
-<<<<<<< HEAD
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-=======
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
->>>>>>> 113aa5a (update website design)
     gap: 40px;
 }
 
@@ -1624,7 +1622,11 @@ header {
     }
 
     .section-header,
-    .doctor-bio {
+    .why-us-content,
+    .doctor-bio,
+    .doctor-bio h2,
+    .doctor-bio p,
+    .doctor-bio .section-header {
         text-align: center !important;
     }
 
@@ -1658,7 +1660,7 @@ header {
     }
 
     .card-2 {
-        right: 0;
+        right: 5%;
         bottom: 10%;
     }
 
@@ -1666,6 +1668,7 @@ header {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 40px;
     }
+
     .top-bar {
         padding: 8px 0;
     }
@@ -1687,7 +1690,8 @@ header {
     }
 
     .hero {
-        padding-top: 220px; /* More space for stacked header on tablet */
+        padding-top: 220px;
+        /* More space for stacked header on tablet */
     }
 }
 
@@ -1718,8 +1722,6 @@ header {
     .nav-btn {
         display: none;
     }
-<<<<<<< HEAD
-=======
 
     .cta-group {
         flex-direction: column;
@@ -1755,7 +1757,6 @@ header {
     .slider-wrapper {
         padding: 0;
     }
->>>>>>> 113aa5a (update website design)
 }
 
 @media (max-width: 576px) {
@@ -1764,49 +1765,57 @@ header {
     }
 
     .hero-text h1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
         line-height: 1.2;
     }
 
-    .special-offer h2 {
-        font-size: 2rem;
+    .hero-text p {
+        font-size: 1rem;
+        margin-bottom: 24px;
     }
 
-    .testimonial-slide {
-        padding: 40px 20px;
+    .section-header h2 {
+        font-size: 1.8rem;
     }
-<<<<<<< HEAD
-=======
 
-    .services-grid {
+    .why-us-content {
+        padding: 20px 0;
+    }
+
+    .doctor-bio h3 {
+        font-size: 1.6rem;
+    }
+
+    .contact-form-container {
+        padding: 30px 20px;
+    }
+
+    .info-grid {
         grid-template-columns: 1fr;
     }
 
-    .service-card {
-        padding: 36px 20px;
+    /* Why Us / Experience Section Fixes */
+    .why-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        text-align: left;
     }
 
-    .top-info span {
-        font-size: 0.8rem;
+    .why-item {
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
     }
 
-    .top-info span:last-child {
-        display: none;
+    /* Doctor Section Fixes */
+    .bio-features {
+        flex-direction: column;
+        gap: 20px;
     }
 
-    .gallery-controls,
-    .slider-controls {
-        gap: 14px;
+    .doctor-signature {
+        text-align: center;
     }
-
-    .gallery-btn,
-    .slider-btn {
-        width: 42px;
-        height: 42px;
-    }
-<<<<<<< HEAD
->>>>>>> 113aa5a (update website design)
-=======
 
     /* Floating Cards Mobile Scaling */
     .floating-card {
@@ -1823,7 +1832,6 @@ header {
         width: 24px;
         height: 24px;
     }
->>>>>>> f570fdf (Fixed responsiveness, mobile overflow, and persistent header)
 }
 
 /* Floating Buttons */
