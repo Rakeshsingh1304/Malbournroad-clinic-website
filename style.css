@@ -74,7 +74,7 @@ body {
     color: var(--slate-800);
     line-height: 1.6;
     background-color: var(--white);
-    background-image: 
+    background-image:
         radial-gradient(at 0% 0%, rgba(14, 165, 233, 0.03) 0, transparent 50%),
         radial-gradient(at 50% 0%, rgba(15, 23, 42, 0.03) 0, transparent 50%);
     background-attachment: fixed;
@@ -253,25 +253,35 @@ img {
     opacity: 1;
 }
 
+.main-header-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    transition: var(--transition-smooth);
+}
+
 header {
     height: 100px;
     display: flex;
     align-items: center;
-    position: sticky;
-    top: 0;
-    left: 0;
     width: 100%;
     background: var(--glass-bg);
     backdrop-filter: var(--glass-blur);
     -webkit-backdrop-filter: var(--glass-blur);
-    z-index: 1000;
     border-bottom: 1px solid var(--glass-border);
     transition: var(--transition-smooth);
 }
 
-header.sticky {
+.main-header-wrapper.sticky header {
     height: 80px;
+    background: var(--white);
     box-shadow: var(--shadow-md);
+}
+
+.main-header-wrapper.sticky .top-bar {
+    display: none;
 }
 
 .nav-container {
@@ -379,7 +389,7 @@ header.sticky {
 /* --- HERO SECTION --- */
 .hero {
     min-height: 90vh;
-    padding: 120px 0 80px;
+    padding: 180px 0 80px; /* Increased top padding for fixed header */
     display: flex;
     align-items: center;
     background: radial-gradient(circle at 10% 20%, rgba(14, 165, 233, 0.05) 0%, rgba(255, 255, 255, 1) 90%);
@@ -437,11 +447,11 @@ header.sticky {
 }
 
 .hero-text h1 {
-    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    font-size: clamp(2.2rem, 7vw, 4.2rem);
     color: var(--primary);
     margin-bottom: 30px;
-    line-height: 1.0;
-    letter-spacing: -0.04em;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
 }
 
 .text-accent {
@@ -859,7 +869,8 @@ header.sticky {
 
 /* Comparison Container Adjustments */
 .comparison-container {
-    height: 350px; /* Slightly smaller for slider */
+    height: 350px;
+    /* Slightly smaller for slider */
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-sm);
     cursor: ew-resize;
@@ -980,7 +991,7 @@ header.sticky {
     .gallery-slide {
         flex: 0 0 100%;
     }
-    
+
     .comparison-container {
         height: 300px;
     }
@@ -1560,28 +1571,26 @@ header.sticky {
         top: 0;
         right: -100%;
         width: 100%;
-        max-width: 400px;
+        max-width: 320px;
         height: 100vh;
-        background: var(--glass-bg);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
+        background: var(--white);
         z-index: 1001;
         display: flex;
         flex-direction: column;
-        padding: 120px 40px;
-        transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.05);
-        border-left: 1px solid var(--glass-border);
+        padding: 100px 40px;
+        transition: var(--transition-smooth);
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+        visibility: hidden;
     }
 
     .nav-links.active {
-        transform: translateX(-100%);
-        right: -100%;
+        right: 0;
+        visibility: visible;
     }
 
     .nav-list {
         flex-direction: column;
-        gap: 30px;
+        gap: 25px;
     }
 
     .nav-link {
@@ -1643,13 +1652,20 @@ header.sticky {
         margin-right: auto;
     }
 
+    .card-1 {
+        left: 0;
+        top: 10%;
+    }
+
+    .card-2 {
+        right: 0;
+        bottom: 10%;
+    }
+
     .footer-grid {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 40px;
     }
-<<<<<<< HEAD
-=======
-
     .top-bar {
         padding: 8px 0;
     }
@@ -1669,7 +1685,10 @@ header.sticky {
     .top-social {
         justify-content: center;
     }
->>>>>>> 113aa5a (update website design)
+
+    .hero {
+        padding-top: 220px; /* More space for stacked header on tablet */
+    }
 }
 
 @media (max-width: 768px) {
@@ -1725,8 +1744,12 @@ header.sticky {
         right: 0;
     }
 
-    .floating-card {
-        display: none;
+    .hero-stats {
+        gap: 30px;
+    }
+
+    .stat-number {
+        font-size: 1.5rem;
     }
 
     .slider-wrapper {
@@ -1741,7 +1764,8 @@ header.sticky {
     }
 
     .hero-text h1 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
+        line-height: 1.2;
     }
 
     .special-offer h2 {
@@ -1780,7 +1804,26 @@ header.sticky {
         width: 42px;
         height: 42px;
     }
+<<<<<<< HEAD
 >>>>>>> 113aa5a (update website design)
+=======
+
+    /* Floating Cards Mobile Scaling */
+    .floating-card {
+        padding: 12px 16px;
+        gap: 10px;
+        border-radius: 16px;
+    }
+
+    .floating-card span {
+        font-size: 0.75rem;
+    }
+
+    .card-avatars .avatar {
+        width: 24px;
+        height: 24px;
+    }
+>>>>>>> f570fdf (Fixed responsiveness, mobile overflow, and persistent header)
 }
 
 /* Floating Buttons */
@@ -1854,4 +1897,26 @@ header.sticky {
 .visible {
     opacity: 1;
     transform: translate(0);
+}
+
+/* Final Overflow Fix */
+html,
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 160px 0 60px;
+    }
+
+    .section {
+        padding: 60px 0;
+    }
+
+    .gallery-track {
+        gap: 20px;
+        max-width: 100%;
+    }
 }

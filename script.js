@@ -29,12 +29,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 2. STICKY HEADER
-    const header = document.getElementById('header');
+    const headerWrapper = document.querySelector('.main-header-wrapper');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 100) {
-            header.classList.add('sticky');
+            headerWrapper.classList.add('sticky');
         } else {
-            header.classList.remove('sticky');
+            headerWrapper.classList.remove('sticky');
         }
     });
 
@@ -228,7 +228,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const dots = document.querySelectorAll('.gallery-dot');
 
         function updateSlider(animate = true) {
-            const slideWidth = originalSlides[0].offsetWidth + 30; // slide + gap
+            const gap = parseInt(window.getComputedStyle(track).gap) || 0;
+            const slideWidth = originalSlides[0].offsetWidth + gap;
             track.style.transition = animate ? 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)' : 'none';
             track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
 
@@ -241,7 +242,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function handleTransitionEnd() {
             isTransitioning = false;
-            const slideWidth = originalSlides[0].offsetWidth + 30;
+            const gap = parseInt(window.getComputedStyle(track).gap) || 0;
+            const slideWidth = originalSlides[0].offsetWidth + gap;
 
             // Boundary snapping for infinite illusion
             if (currentIndex >= originalSlides.length + buffer) {
